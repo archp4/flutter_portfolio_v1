@@ -6,6 +6,7 @@ import 'package:portfilo/views/intro.dart';
 import 'package:portfilo/views/skill.dart';
 import 'package:portfilo/views/work.dart';
 import 'package:portfilo/widget/appbar_nav.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -60,6 +61,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () async {
                         var uri = 'https://resume.io/r/UwUHJVKz4';
+                        await launchUrl(Uri.parse(uri));
                       },
                       child: Text(
                         "View Resume",
