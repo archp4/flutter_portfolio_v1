@@ -8,12 +8,15 @@ Widget footerTitle({required String text}) {
   );
 }
 
-Widget footerSubtitle({required String text}) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 3),
-    child: Text(
-      text,
-      style: footerSubtitleTextStyle(),
+Widget footerSubtitle({required String text, required VoidCallback onTap}) {
+  return TextButton(
+    onPressed: onTap,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 3),
+      child: Text(
+        text,
+        style: footerSubtitleTextStyle(),
+      ),
     ),
   );
 }

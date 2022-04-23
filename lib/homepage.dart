@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfilo/models/consts.dart';
+import 'package:portfilo/models/links.dart';
 import 'package:portfilo/views/about_me.dart';
 import 'package:portfilo/views/footer.dart';
 import 'package:portfilo/views/intro.dart';
@@ -18,17 +19,20 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var index = 1;
   ScrollController scollBarController = ScrollController();
-  List<Widget> widgetList = [
-    const Intro(),
-    const AboutMe(),
-    const Skill(),
-    // const StudyTimeline(),
-    const PersonalProject(),
-    const Footer(),
-  ];
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> widgetList = [
+      const Intro(),
+      const AboutMe(),
+      const Skill(),
+      // const StudyTimeline(),
+      const PersonalProject(),
+      Footer(
+        controller: scollBarController,
+      ),
+    ];
+
     return Scaffold(
       backgroundColor: constantValue.blackColor,
       body: CustomScrollView(
@@ -61,8 +65,7 @@ class _HomePageState extends State<HomePage> {
                         primary: constantValue.yellowColor,
                       ),
                       onPressed: () async {
-                        var uri = 'https://resume.io/r/UwUHJVKz4';
-                        await launchUrl(Uri.parse(uri));
+                        await launchUrl(Uri.parse(resumeUrl));
                       },
                       child: Text(
                         "View Resume",
