@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:portfilo/consts.dart';
+import 'package:portfilo/models/consts.dart';
 
 Widget highlightSection({required String text}) {
   return Container(

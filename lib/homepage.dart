@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfilo/consts.dart';
+import 'package:portfilo/models/consts.dart';
 import 'package:portfilo/views/about_me.dart';
 import 'package:portfilo/views/footer.dart';
 import 'package:portfilo/views/intro.dart';
@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
     const Intro(),
     const AboutMe(),
     const Skill(),
+    // const StudyTimeline(),
     const PersonalProject(),
     const Footer(),
   ];
@@ -36,8 +37,8 @@ class _HomePageState extends State<HomePage> {
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             sliver: SliverAppBar(
-              pinned: true,
-              snap: true,
+              pinned: false,
+              snap: false,
               floating: true,
               leading: Image.asset("assets/images/logo.png"),
               backgroundColor: constantValue.blackColor,

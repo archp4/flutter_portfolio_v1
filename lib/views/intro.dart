@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfilo/consts.dart';
+import 'package:portfilo/models/consts.dart';
 
 class Intro extends StatelessWidget {
   const Intro({Key? key}) : super(key: key);

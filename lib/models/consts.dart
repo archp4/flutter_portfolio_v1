@@ -7,6 +7,7 @@ class ConstantValue {
   Color blackColor = const Color(0xff212529);
   Color yellowColor = const Color(0xffFFB742);
   Color whiteColor = const Color(0xffd4d4d4);
+  Color cardBackground = const Color(0xff383E45);
 }
 
 ConstantValue constantValue = ConstantValue();

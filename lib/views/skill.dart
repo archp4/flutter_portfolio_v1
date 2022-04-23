@@ -64,11 +64,17 @@ class Skill extends StatelessWidget {
           children: [
             customIcon(assetsPath: "assets/svg/html.svg"),
             customIcon(assetsPath: "assets/svg/css.svg"),
-            customIcon(assetsPath: "assets/svg/js.svg"),
+            customIconNetwork(
+              assetsPath:
+                  'https://api.iconify.design/vscode-icons/file-type-js-official.svg',
+            ),
             customIcon(assetsPath: "assets/svg/git-icon.svg"),
             customIcon(assetsPath: "assets/svg/github.svg"),
             customIcon(assetsPath: "assets/svg/python.svg"),
-            customIcon(assetsPath: "assets/svg/vscode.svg"),
+            customIconNetwork(
+              assetsPath:
+                  'https://api.iconify.design/vscode-icons/file-type-vscode.svg',
+            ),
             customIcon(assetsPath: "assets/svg/figma.svg"),
             customIcon(assetsPath: "assets/svg/flutter.svg"),
             customIcon(assetsPath: "assets/svg/dart.svg"),
@@ -83,6 +89,10 @@ class Skill extends StatelessWidget {
             customIconNetwork(
               assetsPath:
                   'https://api.iconify.design/vscode-icons/file-type-firebase.svg',
+            ),
+            customIconNetwork(
+              assetsPath:
+                  'https://api.iconify.design/vscode-icons/file-type-light-solidity.svg',
             ),
           ],
         ),

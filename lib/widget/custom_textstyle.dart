@@ -20,3 +20,17 @@ TextStyle footerSubtitleTextStyle() {
     fontSize: 18,
   );
 }
+
+TextStyle workTitleTextStyle() {
+  return const TextStyle(
+    color: Color(0xffd4d4d4),
+    fontSize: 18,
+  );
+}
+
+TextStyle worksubtitleTextStyle() {
+  return const TextStyle(
+    color: Color(0xff7B7B7B),
+    fontSize: 14,
+  );
+}
