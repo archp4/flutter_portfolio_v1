@@ -29,50 +29,68 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: constantValue.blackColor,
-      appBar: AppBar(
-        leading: Image.asset("assets/images/logo.png"),
-        backgroundColor: constantValue.blackColor,
-        elevation: 0,
-        centerTitle: true,
-        title: AppbarNav(
-          controller: scollBarController,
-          onClick: () async {},
-          index: index,
-        ),
-        actions: [
-          Center(
-            child: SizedBox(
-              height: 45,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  primary: constantValue.yellowColor,
-                ),
-                onPressed: () async {},
-                child: Text(
-                  "Contact Me",
-                  style: TextStyle(
-                    color: constantValue.blackColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-      body: ListView.separated(
+      body: CustomScrollView(
         controller: scollBarController,
-        itemBuilder: (context, index) {
-          return widgetList[index];
-        },
-        separatorBuilder: (contact, index) {
-          return const SizedBox(height: 250);
-        },
-        itemCount: widgetList.length,
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            sliver: SliverAppBar(
+              pinned: true,
+              snap: true,
+              floating: true,
+              leading: Image.asset("assets/images/logo.png"),
+              backgroundColor: constantValue.blackColor,
+              elevation: 0,
+              centerTitle: true,
+              title: AppbarNav(
+                controller: scollBarController,
+                onClick: () async {},
+                index: index,
+              ),
+              actions: [
+                Center(
+                  child: SizedBox(
+                    height: 45,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        primary: constantValue.yellowColor,
+                      ),
+                      onPressed: () async {
+                        var uri = 'https://resume.io/r/UwUHJVKz4';
+                      },
+                      child: Text(
+                        "View Resume",
+                        style: TextStyle(
+                          color: constantValue.blackColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate([
+              ListView.separated(
+                primary: false,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return widgetList[index];
+                },
+                separatorBuilder: (contact, index) {
+                  return const SizedBox(height: 250);
+                },
+                itemCount: widgetList.length,
+              ),
+            ]),
+          ),
+        ],
       ),
     );
   }
