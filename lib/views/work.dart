@@ -19,11 +19,12 @@ class PersonalProject extends StatelessWidget {
         width: height < 800 ? 1020 : 1120,
         child: Column(
           children: [
-            highlightSection(text: "MY SKILLS"),
+            highlightSection(text: "MY PERSONAL PROJECTS"),
             const SizedBox(height: 10),
             headerText(text: "Featured Works"),
             const SizedBox(height: 40),
             Wrap(
+              alignment: WrapAlignment.center,
               spacing: 40,
               runSpacing: 40,
               children: [
@@ -57,7 +58,10 @@ class PersonalProject extends StatelessWidget {
   }) {
     return Container(
       width: 400,
-      decoration: BoxDecoration(color: constantValue.cardBackground),
+      decoration: BoxDecoration(
+        color: constantValue.cardBackground,
+        borderRadius: BorderRadius.circular(5),
+      ),
       padding: const EdgeInsets.all(20),
       child: Stack(
         children: [
@@ -66,6 +70,7 @@ class PersonalProject extends StatelessWidget {
               Text(
                 title,
                 style: workTitleTextStyle(),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20),
               Text(

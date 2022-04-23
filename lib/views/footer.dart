@@ -18,8 +18,11 @@ class Footer extends StatelessWidget {
     } else {
       if (MediaQuery.of(context).size.height > 800 && index == 2) {
         length -= 200;
+      }
+      if (MediaQuery.of(context).size.height > 800 && index == 3) {
+        length -= 250;
       } else {
-        length += 250;
+        length += 400;
       }
     }
     controller.jumpTo(length);
