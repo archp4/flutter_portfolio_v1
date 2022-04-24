@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfilo/models/consts.dart';
+import 'package:portfilo/models/responstive_helper.dart';
 
 class Intro extends StatelessWidget {
   const Intro({Key? key}) : super(key: key);
@@ -15,10 +16,10 @@ class Intro extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(
+              Text(
                 "Hi,I Am ",
                 style: TextStyle(
-                  fontSize: 32,
+                  fontSize: ResponstiveHelper.isDesktop(context) ? 32 : 24,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -28,27 +29,28 @@ class Intro extends StatelessWidget {
                   Text(
                     "Arch Patel",
                     style: TextStyle(
-                      fontSize: 32,
+                      fontSize: ResponstiveHelper.isDesktop(context) ? 32 : 24,
                       fontWeight: FontWeight.bold,
                       color: constantValue.yellowColor,
                     ),
                   ),
                   Container(
                     height: 3,
-                    width: 148,
+                    width: ResponstiveHelper.isDesktop(context) ? 148 : 110,
                     color: constantValue.yellowColor,
                   )
                 ],
               ),
             ],
           ),
-          const Text(
+          Text(
             "Flutter Developer & Otaku",
             style: TextStyle(
-              fontSize: 48,
+              fontSize: ResponstiveHelper.isDesktop(context) ? 48 : 36,
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
+            textAlign: TextAlign.center,
           ),
           const SizedBox(
             height: 60,
@@ -56,10 +58,11 @@ class Intro extends StatelessWidget {
           Text(
             "I Like Code Cool Beautifly Simply Design, Also like watch and read anime and manga",
             style: TextStyle(
-              fontSize: 24,
+              fontSize: ResponstiveHelper.isDesktop(context) ? 24 : 16,
               color: Colors.white.withOpacity(0.6),
               fontWeight: FontWeight.w400,
             ),
+            textAlign: TextAlign.center,
           ),
           const SizedBox(
             height: 30,
