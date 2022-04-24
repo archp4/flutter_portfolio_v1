@@ -12,16 +12,20 @@ class Skill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    if (ResponstiveHelper.isDesktop(context)) {
+    if (!ResponstiveHelper.isMobile(context)) {
       return Container(
         alignment: Alignment.center,
         child: SizedBox(
-          width: height < 800 ? 1020 : 1120,
+          width: ResponstiveHelper.isDesktop(context)
+              ? height < 800
+                  ? 1020
+                  : 1120
+              : 720,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: 500,
+                width: ResponstiveHelper.isDesktop(context) ? 500 : 300,
                 child: _buildLeftPanel(context),
               ),
               Container(
@@ -66,7 +70,7 @@ class Skill extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          highlightSection(text: "MY SKILLS"),
+          highlightSection(text: "MY SKILLS", context: context),
           const SizedBox(height: 10),
           headerText(
               text: "What My Programming Skills Included?", context: context),

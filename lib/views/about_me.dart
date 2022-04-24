@@ -14,7 +14,7 @@ class AboutMe extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        highlightSection(text: "WHO I AM"),
+        highlightSection(text: "WHO I AM", context: context),
         const SizedBox(
           height: 10,
         ),
@@ -32,16 +32,24 @@ class AboutMe extends StatelessWidget {
         const SizedBox(
           height: 100,
         ),
-        hireButton(),
+        if (ResponstiveHelper.isDesktop(context)) hireButton(),
       ],
     );
   }
 
-  Widget _image(double height) {
+  Widget _image(double height, BuildContext context) {
     return Image.asset(
       "assets/images/yellow_me_2.png",
-      width: height < 800 ? 500 : 500,
-      height: height < 800 ? 500 : 500,
+      width: ResponstiveHelper.isDesktop(context)
+          ? height < 800
+              ? 500
+              : 500
+          : 300,
+      height: ResponstiveHelper.isDesktop(context)
+          ? height < 800
+              ? 500
+              : 500
+          : 300,
     );
   }
 
@@ -53,14 +61,23 @@ class AboutMe extends StatelessWidget {
       return Container(
         alignment: Alignment.center,
         child: SizedBox(
-          width: height < 800 ? 1020 : 1120,
+          width: ResponstiveHelper.isDesktop(context)
+              ? height < 800
+                  ? 1020
+                  : 1120
+              : 720,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              _image(height),
+              _image(height, context),
               Container(
                 margin: const EdgeInsets.only(left: 20),
-                width: height < 800 ? 500 : 600,
+                width: ResponstiveHelper.isDesktop(context)
+                    ? height < 800
+                        ? 500
+                        : 600
+                    : 400,
                 child: _data(context),
               ),
             ],
@@ -71,11 +88,10 @@ class AboutMe extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       child: SizedBox(
-        width: height < 800 ? 1020 : 1120,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _image(height),
+            _image(height, context),
             Container(
               margin: const EdgeInsets.only(left: 20, right: 20),
               width: height < 800 ? 500 : 600,
