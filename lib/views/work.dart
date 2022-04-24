@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfilo/models/consts.dart';
 import 'package:portfilo/models/links.dart';
 import 'package:portfilo/models/projects.dart';
+import 'package:portfilo/models/responstive_helper.dart';
 import 'package:portfilo/widget/custom_textstyle.dart';
 import 'package:portfilo/widget/header_text.dart';
 import 'package:portfilo/widget/highlight_section.dart';
@@ -14,6 +15,9 @@ class PersonalProject extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Container(
+      margin: ResponstiveHelper.isMobile(context)
+          ? const EdgeInsets.symmetric(horizontal: 20)
+          : const EdgeInsets.all(0),
       alignment: Alignment.center,
       child: SizedBox(
         width: height < 800 ? 1020 : 1120,
