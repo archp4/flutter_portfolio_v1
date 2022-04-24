@@ -50,3 +50,26 @@ Widget circleIconNetwork({required String assetsPath}) {
     ),
   );
 }
+
+Widget customClickableIconNetwork({
+  required String assetsPath,
+  required VoidCallback onTap,
+}) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: const Color(0xff383E45),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: SizedBox(
+        width: 20,
+        height: 20,
+        child: SvgPicture.network(
+          assetsPath,
+        ),
+      ),
+    ),
+  );
+}

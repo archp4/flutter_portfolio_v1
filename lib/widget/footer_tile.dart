@@ -8,6 +8,13 @@ Widget footerTitle({required String text}) {
   );
 }
 
+Widget footerTitleMoblie({required String text}) {
+  return Text(
+    text,
+    style: footerTitleTextStyleMobile(),
+  );
+}
+
 Widget footerSubtitle({required String text, required VoidCallback onTap}) {
   return TextButton(
     onPressed: onTap,

@@ -14,6 +14,13 @@ TextStyle footerTitleTextStyle() {
   );
 }
 
+TextStyle footerTitleTextStyleMobile() {
+  return const TextStyle(
+    color: Color(0xffd4d4d4),
+    fontSize: 18,
+  );
+}
+
 TextStyle footerSubtitleTextStyle() {
   return const TextStyle(
     color: Color(0xff7B7B7B),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfilo/models/consts.dart';
 import 'package:portfilo/models/links.dart';
+import 'package:portfilo/models/responstive_helper.dart';
 import 'package:portfilo/widget/footer_tile.dart';
+import 'package:portfilo/widget/icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatelessWidget {
@@ -32,6 +34,87 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+
+    if (ResponstiveHelper.isMobile(context)) {
+      return Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        decoration: const BoxDecoration(color: Color(0xff1C1C1C)),
+        alignment: Alignment.center,
+        child: SizedBox(
+          width: double.infinity,
+          child: IntrinsicHeight(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Arch Patel",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: constantValue.yellowColor,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      'Flutter Developer\nGamer\n',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: constantValue.whiteColor,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    footerTitleMoblie(text: "Social Media"),
+                    const SizedBox(height: 20),
+                    Wrap(
+                      spacing: 10,
+                      runSpacing: 10,
+                      alignment: WrapAlignment.end,
+                      children: [
+                        customClickableIconNetwork(
+                          assetsPath:
+                              'https://api.iconify.design/logos/linkedin-icon.svg',
+                          onTap: () async {
+                            if (myLinks.linkedIn != null) {
+                              await launchUrl(Uri.parse(myLinks.linkedIn!));
+                            }
+                          },
+                        ),
+                        customClickableIconNetwork(
+                          assetsPath:
+                              'https://api.iconify.design/icon-park/github.svg',
+                          onTap: () async {
+                            if (myLinks.github != null) {
+                              await launchUrl(Uri.parse(myLinks.github!));
+                            }
+                          },
+                        ),
+                        customClickableIconNetwork(
+                          assetsPath:
+                              'https://api.iconify.design/logos/facebook.svg',
+                          onTap: () async {
+                            if (myLinks.facebook != null) {
+                              await launchUrl(Uri.parse(myLinks.facebook!));
+                            }
+                          },
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
       decoration: const BoxDecoration(color: Color(0xff1C1C1C)),
