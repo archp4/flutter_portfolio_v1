@@ -21,7 +21,7 @@ class PersonalProject extends StatelessWidget {
           children: [
             highlightSection(text: "MY PERSONAL PROJECTS"),
             const SizedBox(height: 10),
-            headerText(text: "Featured Works"),
+            headerText(text: "Featured Works", context: context),
             const SizedBox(height: 40),
             Wrap(
               alignment: WrapAlignment.center,

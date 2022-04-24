@@ -18,7 +18,7 @@ class AboutMe extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        headerText(text: "About Me"),
+        headerText(text: "About Me", context: context),
         const SizedBox(
           height: 40,
         ),

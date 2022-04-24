@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:portfilo/models/responstive_helper.dart';
 
-Widget headerText({required String text}) {
+Widget headerText({required String text, required BuildContext context}) {
   return Text(
     text,
-    style: const TextStyle(
-      fontSize: 48,
+    style: TextStyle(
+      fontSize: ResponstiveHelper.isDesktop(context) ? 48 : 36,
       color: Colors.white,
       fontWeight: FontWeight.bold,
     ),
