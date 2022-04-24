@@ -40,7 +40,7 @@ class AppbarNav extends StatelessWidget {
             }
           } else {
             if (MediaQuery.of(context).size.height > 800 && index == 2) {
-              length -= 200;
+              length -= 400;
             }
             if (MediaQuery.of(context).size.height > 800 && index == 3) {
               length -= 250;
